@@ -4,9 +4,9 @@ Rails.application.routes.draw do
     get 'home', to: 'home#index'
   end
 
-  get '*page', to: 'static#index', constraints: ->(req) do
+  get '*page', to: 'welcome#index', constraints: ->(req) do
     !req.xhr? && req.format.html?
   end
 
-  root 'static#index'
+  root 'welcome#index'
 end

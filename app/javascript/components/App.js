@@ -1,9 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Provider } from 'react-redux'
-import HomePage from "./HomePage";
 import configureStore from "../configureStore";
+
+import Home from "./Home";
+import Login from "./Login";
 
 const store = configureStore();
 
@@ -13,8 +14,8 @@ class App extends React.Component {
       <Provider store={store}>
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" render={() => "Home!"} />
-            <Route path="/home" render={() => <HomePage greeting="Friend" />} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={Login} />
           </Switch>
         </BrowserRouter>
       </Provider>
